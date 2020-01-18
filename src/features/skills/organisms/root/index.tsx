@@ -11,8 +11,8 @@ export const Skills = () => {
   return (
     <Container className={classes.container}>
       <div className={classes.wrapper}>
-        {SergeiModel.skills.map(({ image, key }) => {
-          const title = formatMessage({ id: `skillsTitles.${key}` })
+        {SergeiModel.skills.map(({ image, key, translateKey }) => {
+          const title = formatMessage({ id: `${translateKey}.title` })
 
           const titleNode = (
             <div className={classes.textCenter}>
@@ -35,11 +35,11 @@ export const Skills = () => {
               bordered={false}
               className={classes.card}
               cover={cover}
-              key={title}
+              key={key}
               size='small'
               title={titleNode}
             >
-              <FormattedMessage id={`skillsDescriptions.${key}`} />
+              <FormattedMessage id={`${translateKey}.desc`} />
             </Card>
           )
         })}

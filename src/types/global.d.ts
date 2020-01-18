@@ -23,4 +23,17 @@ declare type Skills =
 declare interface ISkill {
   key: Skills
   image: string
+  translateKey: string
+}
+
+declare type Project =
+  | 'pedant'
+  | 'testingSystem'
+  | 'crmSystem'
+  | 'tradeIn'
+
+declare interface IProject {
+  key: Project
+  translateKey: string
+  image: string
 }
