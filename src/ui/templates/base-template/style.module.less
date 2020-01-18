@@ -1,0 +1,13 @@
+@import '~styles/theme';
+
+.wrapper {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: @indent;
+  background-color: darken(@white, 2);
+}
+
+.children {
+  overflow: auto;
+}
