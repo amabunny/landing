@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Container } from 'ui'
-import { Typography } from 'antd'
+import { Typography, Divider } from 'antd'
 import { FormattedMessage } from 'react-intl'
 import { SergeiModel } from 'models/sergei'
 import { ProjectsPreviewList } from '../projects-preview-list'
 import classes from './style.module.less'
 
 export const AboutMe = () => {
+  const basicInfoValues = useMemo(() => ({
+    old: new Date().getFullYear() - SergeiModel.bornYear
+  }), [])
+
   return (
     <Container>
       <Typography.Title>
@@ -16,13 +20,11 @@ export const AboutMe = () => {
       <Typography.Paragraph className={classes.paragraph}>
         <FormattedMessage
           id='aboutMe.basicInfo'
-          values={{
-            old: new Date().getFullYear() - SergeiModel.bornYear
-          }}
+          values={basicInfoValues}
         />
       </Typography.Paragraph>
 
-      <br />
+      <Divider />
 
       <div>
         <ProjectsPreviewList />

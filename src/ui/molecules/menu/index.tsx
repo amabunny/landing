@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import { FormattedMessage } from 'react-intl'
-import { navigate } from '@reach/router'
+import { navigate, Location } from '@reach/router'
 import { Icon, Menu } from 'antd'
 import { ClickParam } from 'antd/lib/menu'
 import classes from './style.module.less'
@@ -19,8 +19,13 @@ const menuItems: IMenuItem[] = [
   },
   {
     intlKey: 'menu.todos',
-    icon: 'unordered-list',
+    icon: 'check-square',
     route: '/todos'
+  },
+  {
+    intlKey: 'menu.sequences',
+    icon: 'ordered-list',
+    route: '/sequences'
   },
   {
     intlKey: 'menu.skills',
@@ -40,21 +45,25 @@ export const NavigationBar = () => {
   }, [])
 
   return (
-    <Menu
-      className={classes.menu}
-      mode='horizontal'
-      selectedKeys={['']}
-    >
-      {menuItems.map(({ icon, intlKey, route }) =>
-        <Menu.Item
-          className={classes.menuItem}
-          key={route}
-          onClick={onMenuItemClick}
+    <Location>
+      {({ location }) => (
+        <Menu
+          className={classes.menu}
+          mode='horizontal'
+          selectedKeys={[location.pathname]}
         >
-          <Icon type={icon} />
-          <FormattedMessage id={intlKey} />
-        </Menu.Item>
+          {menuItems.map(({ icon, intlKey, route }) =>
+            <Menu.Item
+              className={classes.menuItem}
+              key={route}
+              onClick={onMenuItemClick}
+            >
+              <Icon type={icon} />
+              <FormattedMessage id={intlKey} />
+            </Menu.Item>
+          )}
+        </Menu>
       )}
-    </Menu>
+    </Location>
   )
 }

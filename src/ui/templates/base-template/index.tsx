@@ -1,4 +1,5 @@
 import React from 'react'
+import { Location } from '@reach/router'
 import { Header } from '../../organisms/header'
 import { Footer } from '../../molecules/footer'
 import classes from './style.module.less'
@@ -20,9 +21,16 @@ export const BaseTemplate = ({ children }: IProps) => {
 
       {children
         ? (
-          <div className={classes.children}>
-            {children}
-          </div>
+          <Location>
+            {({ location }) => (
+              <div
+                className={classes.children}
+                key={location.key}
+              >
+                {children}
+              </div>
+            )}
+          </Location>
         )
         : (
           <>

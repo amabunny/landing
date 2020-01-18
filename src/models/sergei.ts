@@ -3,7 +3,7 @@ export class SergeiModel {
 
   static avatarUrl = `${SergeiModel.path}/bbavatar.jpg`
 
-  static nickname = '@amabunny'
+  static nickname = '@mabunny'
 
   static bornYear = 1996
 

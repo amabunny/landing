@@ -1,6 +1,6 @@
 import React from 'react'
 import { hot } from 'react-hot-loader/root'
-import { IntlProvider } from 'features/intl'
+import { IntlProvider } from 'shared-features/intl'
 import { Router } from '../router'
 
 const AppView = () => {
