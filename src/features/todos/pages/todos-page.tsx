@@ -1,11 +1,14 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 import { RouteComponentProps } from '@reach/router'
-import { BaseTemplate } from 'ui'
+import { BaseTemplate, Container } from 'ui'
+import { Todos } from '../organisms/root'
 
 export const TodosPage: FC<RouteComponentProps> = () => {
   return (
     <BaseTemplate>
-      its todos page!
+      <Container>
+        <Todos />
+      </Container>
     </BaseTemplate>
   )
 }

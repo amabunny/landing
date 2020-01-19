@@ -74,7 +74,7 @@
         1
       ],
       "no-undef-init": "off",
-      "indent": "off"
+      "react/prop-types": "off"
     }
   },
   "prettier": {
