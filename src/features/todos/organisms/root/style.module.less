@@ -1,17 +1,24 @@
+@import "~styles/theme";
+
 .wrapper {
   display: grid;
   grid-template-areas:
-    "filters filters filters form"
-    "task task task task"
-    "task task task task";
+    "filters filters filters filters"
+    "task task task form"
+    "task task task form";
+  grid-gap: @indent;
+  align-items: start;
 }
 
 .filters {
   grid-area: filters;
 }
 
-.task {
+.todos {
   grid-area: task;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(33.33%, 1fr));
+  grid-gap: @indent;
 }
 
 .form {

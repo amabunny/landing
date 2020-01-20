@@ -1,9 +1,8 @@
-import { Moment } from 'moment'
-
 export interface ITodo {
   text: string
-  deadline?: Moment
-  doneDate?: Moment
+  deadline?: number
+  doneDate?: number
+  created: number
 }
 
 export enum TodoFilterTypes {
