@@ -1,5 +1,6 @@
 /// <reference types="react-scripts" />
 /// <reference types="./types/global" />
+/// <reference types="effector" />
 
 declare module '*.module.less' {
   const classes: { [key: string]: string }

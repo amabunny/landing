@@ -41,7 +41,9 @@ const menuItems: IMenuItem[] = [
 
 export const NavigationBar = () => {
   const onMenuItemClick = useCallback((param: ClickParam) => {
-    navigate(param.key)
+    if (window.location.pathname !== param.key) {
+      navigate(param.key)
+    }
   }, [])
 
   return (

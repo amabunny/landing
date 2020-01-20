@@ -1,27 +1,36 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { IntlProvider as ReactIntlProvider } from 'react-intl'
 import { useStore } from 'effector-react'
-import { $language, $intl, getLocaleAndChangeLanguage } from '../../model'
+import { $language, $intl } from '../../model'
 
 interface IProps {
   children: React.ReactNode
+  outerLoading?: boolean
+  loadingMessageNode?: React.ReactNode
+  loadingErrorNode?: React.ReactNode
 }
 
-export const IntlProvider = ({ children }: IProps) => {
+export const IntlProvider = ({
+  children,
+  outerLoading,
+  loadingMessageNode = 'Loading intl...',
+  loadingErrorNode = 'An error occured during intl load.'
+}: IProps) => {
   const language = useStore($language)
-  const { data, loading } = useStore($intl)
+  const { data, loading, error } = useStore($intl)
 
-  useEffect(
-    () => {
-      getLocaleAndChangeLanguage()
-    },
-    []
-  )
-
-  if (loading || !language) {
+  if (outerLoading || loading || !language) {
     return (
       <>
-        loading...
+        {loadingMessageNode}
+      </>
+    )
+  }
+
+  if (error) {
+    return (
+      <>
+        {loadingErrorNode}
       </>
     )
   }
