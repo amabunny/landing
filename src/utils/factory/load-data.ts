@@ -25,7 +25,7 @@ export const createLoadDataStore = <T, Params = void>({
     .on(loadData.done, (state, { result }) => ({ ...state, data: result, error: null }))
     .on(loadData.fail, (state, { error }) => ({ ...state, error: error.message }))
 
-  /** Computed: map only data to use it directly */
+  /** Computed: map data to use it directly */
   const $data = $dataStore.map(({ data }) => data)
 
   return {

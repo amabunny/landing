@@ -1,4 +1,4 @@
 export enum AvailableLocales {
-  ru_RU = 'ru-RU',
-  en_US = 'en-US'
+  ruRU = 'ru-RU',
+  enUS = 'en-US'
 }

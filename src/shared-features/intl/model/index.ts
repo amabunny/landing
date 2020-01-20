@@ -39,7 +39,7 @@ forward({
     const value = availableLocalesContract('browser language', browserLng)
 
     if (value instanceof ValidationError) {
-      return AvailableLocales.en_US
+      return AvailableLocales.enUS
     }
 
     return value
