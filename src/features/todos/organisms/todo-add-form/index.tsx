@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl'
 import { Form, Input, DatePicker, Button } from 'antd'
 import moment, { Moment } from 'moment'
 import { addTodo } from '../../model'
-import { ITodo } from '../../types'
+import { ITodo } from 'types/todos'
 
 interface IProps {
   className?: string

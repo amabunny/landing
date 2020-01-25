@@ -1,7 +1,7 @@
 import React from 'react'
 import cn from 'classnames'
 import { Card } from 'antd'
-import { ITodo } from '../../types'
+import { ITodo } from 'types/todos'
 
 interface IProps {
   className?: string

@@ -18,7 +18,6 @@
 	"projects.testingSystem.title": "Система тестирования",
 	"projects.tradeIn.desc": "Trade-In мобильных телефонов. Оценка стоимости с некоторыми дополнительными возможностями.",
 	"projects.tradeIn.title": "Trade-In",
-	"settings.language": "Язык",
 	"settings.submit": "Сохранить",
 	"settings.title": "Настройки",
 	"skills.deploy.desc": "Мы запихнем все это в докер-контейнер!",

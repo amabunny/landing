@@ -4,7 +4,7 @@ import cn from 'classnames'
 import { FormattedMessage } from 'react-intl'
 import { useStore } from 'effector-react'
 import { $filterType, $searchString, changeFilterType, changeSearchString } from '../../model'
-import { TodoFilterTypes } from '../../types'
+import { TodoFilterTypes } from 'types/todos'
 import classes from './style.module.less'
 
 interface IProps {

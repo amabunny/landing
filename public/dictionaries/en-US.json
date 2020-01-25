@@ -18,7 +18,6 @@
 	"projects.testingSystem.title": "Testing system",
 	"projects.tradeIn.desc": "Trade-in mobile phones. Pricing with some additional features.",
 	"projects.tradeIn.title": "Trade-In",
-	"settings.language": "Language",
 	"settings.submit": "Save",
 	"settings.title": "Settings",
 	"skills.deploy.desc": "We'll pack it all into the docker container!",
