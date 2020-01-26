@@ -7,7 +7,7 @@ export class TodosModel {
   static objectStoreName = `${TodosModel.dbName}ObjectStore`
 
   static messages = {
-    CONNECTION_NOT_OPENED: 'DB connection is not opened'
+    CONNECTION_IS_NOT_OPENED: 'DB connection is not opened'
   }
 
   private db: Dexie | null = null
@@ -27,9 +27,7 @@ export class TodosModel {
       this.db.close()
       this.log('db connection closed')
     } else {
-      const errorMsg = TodosModel.messages.CONNECTION_NOT_OPENED
-      const error = new Error(errorMsg)
-      throw error
+      throw new Error(TodosModel.messages.CONNECTION_IS_NOT_OPENED)
     }
   }
 
@@ -37,10 +35,9 @@ export class TodosModel {
     if (this.db) {
       await this.db.table<ITodo, number>(TodosModel.objectStoreName).add(value)
       return value
-    } else {
-      const error = new Error(TodosModel.messages.CONNECTION_NOT_OPENED)
-      throw error
     }
+
+    throw new Error(TodosModel.messages.CONNECTION_IS_NOT_OPENED)
   }
 
   public getAll (whereCb?: (table: Dexie.Table<ITodo, number>) => Dexie.Collection<ITodo, number>) {
@@ -53,8 +50,7 @@ export class TodosModel {
 
       return table.toArray()
     } else {
-      const error = new Error(TodosModel.messages.CONNECTION_NOT_OPENED)
-      throw error
+      throw new Error(TodosModel.messages.CONNECTION_IS_NOT_OPENED)
     }
   }
 
@@ -62,19 +58,17 @@ export class TodosModel {
     if (this.db) {
       await this.db.table<ITodo, number>(TodosModel.objectStoreName).put(todo)
       return todo
-    } else {
-      const error = new Error(TodosModel.messages.CONNECTION_NOT_OPENED)
-      throw error
     }
+
+    throw new Error(TodosModel.messages.CONNECTION_IS_NOT_OPENED)
   }
 
   public async remove (taskCreated: number) {
     if (this.db) {
       return this.db.table<ITodo, number>(TodosModel.objectStoreName).delete(taskCreated)
-    } else {
-      const error = new Error(TodosModel.messages.CONNECTION_NOT_OPENED)
-      throw error
     }
+
+    throw new Error(TodosModel.messages.CONNECTION_IS_NOT_OPENED)
   }
 
   private log (message: any) {
