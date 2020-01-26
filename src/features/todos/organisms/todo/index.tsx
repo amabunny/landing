@@ -2,7 +2,7 @@ import React, { useMemo, useCallback } from 'react'
 import cn from 'classnames'
 import { Card, Checkbox, Tooltip, Icon } from 'antd'
 import { FormattedDate, FormattedMessage } from 'react-intl'
-import { updateTodo } from '../../model'
+import { updateTodo, removeTodo } from '../../model'
 import { ITodo } from 'types/todos'
 import classes from './style.module.less'
 
@@ -23,6 +23,10 @@ export const Todo = ({ text, className, created, doneDate, deadline }: ITodo & I
       doneDate: newDoneDate
     })
   }, [created, text, deadline, doneDate])
+
+  const onRemoveClick = useCallback(() => {
+    removeTodo(created)
+  }, [created])
 
   const formattedDateProps = useMemo((): Intl.DateTimeFormatOptions => ({
     day: 'numeric',
@@ -68,6 +72,7 @@ export const Todo = ({ text, className, created, doneDate, deadline }: ITodo & I
             <Tooltip overlay={<FormattedMessage id='todos.remove' />}>
               <Icon
                 className={classes.removeIcon}
+                onClick={onRemoveClick}
                 type='delete'
               />
             </Tooltip>

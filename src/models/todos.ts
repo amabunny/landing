@@ -147,6 +147,40 @@ export class TodosModel {
     })
   }
 
+  public remove (taskCreated: number) {
+    return new Promise<ITodo>((resolve, reject) => {
+      if (this.db) {
+        const transaction = this.db
+          .transaction(TodosModel.objectStoreName, 'readwrite')
+          .objectStore(TodosModel.objectStoreName)
+          .openCursor()
+
+        transaction.onsuccess = function () {
+          if (this.result) {
+            if (this.result.value.created === taskCreated) {
+              const deletingTask: ITodo = { ...this.result.value }
+              const request = this.result.delete()
+
+              request.onsuccess = () => {
+                resolve(deletingTask)
+              }
+
+              request.onerror = () => {
+                const error = new Error('Error during task deleting')
+                reject(error)
+              }
+            } else {
+              this.result.continue()
+            }
+          }
+        }
+      } else {
+        const error = new Error(TodosModel.messages.CONNECTION_NOT_OPENED)
+        reject(error)
+      }
+    })
+  }
+
   private log (message: any) {
     console.log(`[${TodosModel.dbName}]:`, message)
   }

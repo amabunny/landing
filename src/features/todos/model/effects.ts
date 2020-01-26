@@ -10,3 +10,5 @@ export const getAllTodos = createEffect<void, ITodo[], Error>()
 export const init = createEffect<void, unknown, Error>()
 
 export const reset = createEffect<void, unknown, Error>()
+
+export const removeTodo = createEffect<number, ITodo, Error>()
