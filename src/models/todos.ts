@@ -14,7 +14,6 @@ export class TodosModel {
   public openConnection () {
     return new Promise((resolve, reject) => {
       const self = this
-
       const openDbRequest = window.indexedDB.open(TodosModel.dbName, TodosModel.dbVersion)
 
       openDbRequest.onsuccess = function () {

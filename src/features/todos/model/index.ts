@@ -49,7 +49,7 @@ init.use(async () => {
   await getAllTodos()
 })
 
-getAllTodos.use(async () => {
+getAllTodos.use(() => {
   return todosModel.getAll()
 })
 
@@ -57,8 +57,8 @@ addTodo.use(value => {
   return todosModel.add(value)
 })
 
-reset.use(async () => {
-  await todosModel.closeConnection()
+reset.use(() => {
+  return todosModel.closeConnection()
 })
 
 addTodo.use(todo => {
