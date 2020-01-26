@@ -38,10 +38,14 @@
 	"skills.vcs.title": "Version Control Systems",
 	"skills.vue.desc": "...or even Evan`s.",
 	"skills.vue.title": "Vue",
+	"todos.completed": "Done",
+	"todos.completedDate": "Completed:",
 	"todos.filterTypes.all": "All",
 	"todos.filterTypes.done": "Done",
 	"todos.filterTypes.undone": "Undone",
 	"todos.form.deadline": "Do until",
 	"todos.form.submit": "Add",
-	"todos.form.text": "Description"
+	"todos.form.text": "Description",
+	"todos.remove": "Remove",
+	"todos.undone": "Cancel completion"
 }

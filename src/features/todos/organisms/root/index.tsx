@@ -3,7 +3,7 @@ import { useStore } from 'effector-react'
 import { notification } from 'antd'
 import { Filters } from '../filters'
 import { TodoAddForm } from '../todo-add-form'
-import { Todo } from '../../molecules/todo'
+import { Todo } from '../todo'
 import { $todos, init, getAllTodos, reset } from '../../model'
 import classes from './style.module.less'
 

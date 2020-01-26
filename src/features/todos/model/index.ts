@@ -1,10 +1,10 @@
 import { createStore } from 'effector'
 import { TodosModel } from 'models/todos'
-import { changeFilterType, changeSearchString, init, reset } from './events'
-import { getAllTodos, addTodo } from './effects'
+import { changeFilterType, changeSearchString } from './events'
+import { getAllTodos, addTodo, updateTodo, init, reset } from './effects'
 import { ITodo, TodoFilterTypes } from 'types/todos'
 
-let todosModel: TodosModel = new TodosModel()
+const todosModel = new TodosModel()
 
 const initialState: ITodo[] = []
 
@@ -16,8 +16,15 @@ const initialState: ITodo[] = []
 const $todos = createStore(initialState)
 
 $todos
-  .on(addTodo.done, (state, { result }) => state.concat(result))
   .on(getAllTodos.done, (_, { result }) => result)
+  .on(addTodo.done, (state, { result }) => state.concat(result))
+  .on(updateTodo.done, (state, { result }) => state.map(item => {
+    if (item.created === result.created) {
+      return result
+    }
+
+    return item
+  }))
 
 /** Store: current filter type based on task status enum values
  * @see TodoFilterTypes
@@ -35,9 +42,8 @@ $searchString
 
 /** End of stores */
 
-/** Side-effects */
-init.watch(async () => {
-  todosModel = new TodosModel()
+/** Set handlers to effects */
+init.use(async () => {
   await todosModel.openConnection()
 
   getAllTodos.use(async () => {
@@ -48,19 +54,21 @@ init.watch(async () => {
     return todosModel.add(value)
   })
 
-  getAllTodos()
+  await getAllTodos()
 })
 
-reset.watch(async () => {
+reset.use(async () => {
   await todosModel.closeConnection()
 })
 
-addTodo.watch(todo => {
-  if (todosModel) {
-    todosModel.add(todo)
-  }
+addTodo.use(todo => {
+  return todosModel.add(todo)
 })
-/** End of side-effects */
+
+updateTodo.use(({ created, ...updatingFields }) => {
+  return todosModel.update(created, updatingFields)
+})
+/** End of set handlers to effects */
 
 export {
   $todos,
@@ -70,6 +78,7 @@ export {
   changeFilterType,
   changeSearchString,
   addTodo,
+  updateTodo,
   init,
   reset
 }

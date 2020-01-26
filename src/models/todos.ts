@@ -5,6 +5,10 @@ export class TodosModel {
   static dbName = 'todos'
   static objectStoreName = `${TodosModel.dbName}ObjectStore`
 
+  static messages = {
+    CONNECTION_NOT_OPENED: 'DB connection is not opened'
+  }
+
   private db: IDBDatabase | null = null
 
   public openConnection () {
@@ -48,7 +52,7 @@ export class TodosModel {
         this.log('db connection closed')
         resolve()
       } else {
-        const errorMsg = 'DB is not opened'
+        const errorMsg = TodosModel.messages.CONNECTION_NOT_OPENED
         const error = new Error(errorMsg)
         reject(error)
       }
@@ -58,31 +62,32 @@ export class TodosModel {
   public add (value: ITodo) {
     return new Promise<ITodo>((resolve, reject) => {
       if (this.db) {
-        const transation = this.db.transaction(TodosModel.objectStoreName, 'readwrite')
-        transation.objectStore(TodosModel.objectStoreName).add(value)
+        const request = this.db
+          .transaction(TodosModel.objectStoreName, 'readwrite')
+          .objectStore(TodosModel.objectStoreName).add(value)
 
-        transation.oncomplete = () => {
+        request.onsuccess = () => {
           resolve(value)
         }
 
-        transation.onerror = () => {
+        request.onerror = () => {
           const error = new Error('Incorrect or existing value')
           reject(error)
         }
       } else {
-        const error = new Error('DB connection is not opened')
+        const error = new Error(TodosModel.messages.CONNECTION_NOT_OPENED)
         reject(error)
       }
     })
   }
 
   public getAll () {
-    const self = this
-
     return new Promise<ITodo[]>((resolve, reject) => {
-      if (self.db) {
-        const transaction = self.db.transaction(TodosModel.objectStoreName, 'readonly')
-        const request = transaction.objectStore(TodosModel.objectStoreName).getAll()
+      if (this.db) {
+        const request = this.db
+          .transaction(TodosModel.objectStoreName, 'readonly')
+          .objectStore(TodosModel.objectStoreName)
+          .getAll()
 
         request.onsuccess = function () {
           resolve(this.result)
@@ -93,7 +98,50 @@ export class TodosModel {
           reject(error)
         }
       } else {
-        const error = new Error('DB connection is not opened')
+        const error = new Error(TodosModel.messages.CONNECTION_NOT_OPENED)
+        reject(error)
+      }
+    })
+  }
+
+  public update (taskCreated: number, updatingData: Omit<ITodo, 'created'>) {
+    return new Promise<ITodo>((resolve, reject) => {
+      if (this.db) {
+        const request = this.db
+          .transaction(TodosModel.objectStoreName, 'readwrite')
+          .objectStore(TodosModel.objectStoreName)
+          .openCursor()
+
+        request.onsuccess = function () {
+          if (this.result) {
+            if (this.result.value.created === taskCreated) {
+              const task: ITodo = {
+                ...this.result.value,
+                ...updatingData
+              }
+
+              const updateRequest = this.result.update(task)
+
+              updateRequest.onsuccess = () => {
+                resolve(task)
+              }
+
+              updateRequest.onerror = () => {
+                const error = new Error('Error during task update')
+                reject(error)
+              }
+            } else {
+              this.result.continue()
+            }
+          }
+        }
+
+        request.onerror = () => {
+          const error = new Error('Cursor request error')
+          reject(error)
+        }
+      } else {
+        const error = new Error(TodosModel.messages.CONNECTION_NOT_OPENED)
         reject(error)
       }
     })

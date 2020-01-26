@@ -38,10 +38,14 @@
 	"skills.vcs.title": "Системы контроля версий",
 	"skills.vue.desc": "...или Эвана.",
 	"skills.vue.title": "Vue",
+	"todos.completed": "Завершить",
+	"todos.completedDate": "Завершено:",
 	"todos.filterTypes.all": "Все",
 	"todos.filterTypes.done": "Завершен",
 	"todos.filterTypes.undone": "Не завершен",
 	"todos.form.deadline": "Выполнить до",
 	"todos.form.submit": "Добавить",
-	"todos.form.text": "Описание"
+	"todos.form.text": "Описание",
+	"todos.remove": "Удалить",
+	"todos.undone": "Отменить завершение"
 }

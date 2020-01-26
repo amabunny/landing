@@ -6,13 +6,18 @@
     "filters filters filters filters"
     "task task task form"
     "task task task form";
-  grid-gap: @indent * 2;
+  grid-column-gap: @indent * 2;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: start;
 }
 
 .filters {
   grid-area: filters;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: @template-default-background;
+  padding-bottom: @indent;
 }
 
 .todos {
@@ -21,8 +26,12 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: @indent;
   overflow: auto;
+  align-items: start;
 }
 
 .form {
   grid-area: form;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
