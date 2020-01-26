@@ -4,7 +4,7 @@ import { notification } from 'antd'
 import { Filters } from '../filters'
 import { TodoAddForm } from '../todo-add-form'
 import { Todo } from '../todo'
-import { $todos, init, getAllTodos, reset } from '../../model'
+import { $todos, init, reset, errorReceived } from '../../model'
 import classes from './style.module.less'
 
 export const Todos = () => {
@@ -13,7 +13,7 @@ export const Todos = () => {
   useEffect(() => {
     init()
 
-    const getAllTodosErrorSub = getAllTodos.fail.watch(({ error }) => {
+    const getAllTodosErrorSub = errorReceived.watch(({ error }) => {
       notification.error({ message: error.message })
     })
 

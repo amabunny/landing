@@ -1,6 +1,6 @@
-import { createStore } from 'effector'
+import { createStore, forward, merge } from 'effector'
 import { TodosModel } from 'models/todos'
-import { changeFilterType, changeSearchString } from './events'
+import { changeFilterType, changeSearchString, errorReceived } from './events'
 import { getAllTodos, addTodo, updateTodo, removeTodo, init, reset } from './effects'
 import { ITodo, TodoFilterTypes } from 'types/todos'
 
@@ -18,7 +18,7 @@ const $todos = createStore(initialState)
 $todos
   .on(getAllTodos.done, (_, { result }) => result)
   .on(addTodo.done, (state, { result }) => state.concat(result))
-  .on(removeTodo.done, (state, { result }) => state.filter(item => item.created !== result.created))
+  .on(removeTodo.done, (state, { params }) => state.filter(item => item.created !== params))
   .on(updateTodo.done, (state, { result }) => state.map(item => {
     if (item.created === result.created) {
       return result
@@ -61,18 +61,27 @@ reset.use(() => {
   return todosModel.closeConnection()
 })
 
-addTodo.use(todo => {
-  return todosModel.add(todo)
-})
-
-updateTodo.use(({ created, ...updatingFields }) => {
-  return todosModel.update(created, updatingFields)
+updateTodo.use(todo => {
+  return todosModel.update(todo)
 })
 
 removeTodo.use(taskCreated => {
   return todosModel.remove(taskCreated)
 })
 /** End of set handlers to effects */
+
+/* Side-effects */
+forward({
+  from: merge([
+    getAllTodos.fail,
+    addTodo.fail,
+    reset.fail,
+    updateTodo.fail,
+    removeTodo.fail
+  ]),
+  to: errorReceived
+})
+/* End of side-effects */
 
 export {
   $todos,
@@ -85,5 +94,6 @@ export {
   updateTodo,
   removeTodo,
   init,
-  reset
+  reset,
+  errorReceived
 }

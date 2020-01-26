@@ -11,4 +11,4 @@ export const init = createEffect<void, unknown, Error>()
 
 export const reset = createEffect<void, unknown, Error>()
 
-export const removeTodo = createEffect<number, ITodo, Error>()
+export const removeTodo = createEffect<number, void, Error>()
