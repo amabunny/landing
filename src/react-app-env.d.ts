@@ -1,6 +1,6 @@
 /// <reference types="react-scripts" />
-/// <reference types="./types/global" />
-/// <reference types="./types/sergei-model" />
+/// <reference types="./types/declarations/global" />
+/// <reference types="./types/declarations/sergei-model" />
 
 declare module '*.module.less' {
   const classes: { [key: string]: string }
