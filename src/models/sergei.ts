@@ -7,7 +7,7 @@ export class SergeiModel {
 
   static bornYear = 1996
 
-  static get skills (): ISkill[] {
+  static get skills (): ISergeiSkill[] {
     return [
       {
         key: 'ts',
@@ -57,11 +57,11 @@ export class SergeiModel {
     ]
   }
 
-  static getSkillImage (skill: Skills) {
+  static getSkillImage (skill: TSergeiSkill) {
     return `${SergeiModel.path}/skills/${skill}.png`
   }
 
-  static get projects (): IProject[] {
+  static get projects (): ISergeiProject[] {
     return [
       {
         key: 'pedant',
@@ -86,7 +86,7 @@ export class SergeiModel {
     ]
   }
 
-  static getProjectImage (project: Project) {
+  static getProjectImage (project: TSergeiProjec) {
     return `${SergeiModel.path}/projects/${project}.png`
   }
 }
