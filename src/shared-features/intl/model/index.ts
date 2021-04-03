@@ -31,7 +31,8 @@ forward({
 })
 
 guard({
-  source: $nonNullableLanugage.updates,
+  clock: $language.updates,
+  source: $nonNullableLanugage,
   filter: $isLanguageExists,
   target: loadDictionary
 })
