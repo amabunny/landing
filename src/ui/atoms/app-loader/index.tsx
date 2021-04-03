@@ -1,5 +1,6 @@
 import React from 'react'
-import { Spin, Icon } from 'antd'
+import { Spin } from 'antd'
+import { SyncOutlined } from '@ant-design/icons'
 import classes from './style.module.less'
 
 export const AppLoader = () => {
@@ -7,10 +8,9 @@ export const AppLoader = () => {
     <div className={classes.loader}>
       <Spin
         indicator={(
-          <Icon
+          <SyncOutlined
             spin
             style={{ fontSize: 55 }}
-            type='sync'
           />
         )}
         style={{ fontSize: 35 }}

@@ -1,43 +1,44 @@
 import React, { useCallback } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { navigate, Location } from '@reach/router'
-import { Icon, Menu } from 'antd'
+import { Menu } from 'antd'
+import { MenuItemProps } from 'antd/lib/menu'
+import { HomeOutlined, ProfileOutlined, CheckSquareOutlined, SettingOutlined } from '@ant-design/icons'
 import { RoutesService } from 'services'
-import { ClickParam } from 'antd/lib/menu'
 import classes from './style.module.less'
 
 interface IMenuItem {
   intlKey: string
-  icon: string
+  icon: React.ReactNode
   route: string
 }
 
 const menuItems: IMenuItem[] = [
   {
     intlKey: 'menu.index',
-    icon: 'home',
+    icon: <HomeOutlined />,
     route: RoutesService.getIndex()
   },
   {
     intlKey: 'menu.skills',
-    icon: 'profile',
+    icon: <ProfileOutlined />,
     route: RoutesService.getSkills()
   },
   {
     intlKey: 'menu.todos',
-    icon: 'check-square',
+    icon: <CheckSquareOutlined />,
     route: RoutesService.getTodos()
   },
   {
     intlKey: 'menu.settings',
-    icon: 'setting',
+    icon: <SettingOutlined />,
     route: RoutesService.getSettings()
   }
 ]
 
 export const NavigationBar = () => {
-  const onMenuItemClick = useCallback((param: ClickParam) => {
-    if (window.location.pathname !== param.key) {
+  const onMenuItemClick = useCallback<NonNullable<MenuItemProps['onClick']>>((param) => {
+    if (window.location.pathname !== param.key && typeof param.key === 'string') {
       navigate(param.key)
     }
   }, [])
@@ -56,7 +57,7 @@ export const NavigationBar = () => {
               key={route}
               onClick={onMenuItemClick}
             >
-              <Icon type={icon} />
+              {icon}
               <FormattedMessage id={intlKey} />
             </Menu.Item>
           )}

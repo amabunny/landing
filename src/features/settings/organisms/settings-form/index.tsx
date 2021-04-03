@@ -53,16 +53,19 @@ export const SettingsForm = () => {
       <Form
         {...formItemLayout}
         className={classes.form}
-        onSubmit={onFormSubmit}
+        onSubmitCapture={onFormSubmit}
       >
         <Form.Item label={<FormattedMessage id='language' />}>
           <Select
             className={classes.languageSelect}
             onSelect={onLanguageSelect}
-            value={$formLanguage}
+            value={$formLanguage || undefined}
           >
             {Object.values(AvailableLocales).map(locale =>
-              <Select.Option key={locale}>
+              <Select.Option
+                key={locale}
+                value={locale}
+              >
                 <FormattedMessage id={`locales.${locale}`} />
               </Select.Option>
             )}

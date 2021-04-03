@@ -54,7 +54,7 @@ export const TodoAddForm: React.FC<IProps> = ({ className }) => {
   return (
     <Form
       className={className}
-      onSubmit={onFormSubmit}
+      onSubmitCapture={onFormSubmit}
     >
       <Form.Item label={<FormattedMessage id='todos.form.text' />}>
         <Input.TextArea

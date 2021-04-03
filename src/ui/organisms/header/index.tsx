@@ -13,7 +13,6 @@ export const Header = () => {
           <Row
             align='middle'
             gutter={8}
-            type='flex'
           >
             <Col>
               <Avatar src={SergeiModel.avatarUrl} />

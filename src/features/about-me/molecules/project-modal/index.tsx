@@ -1,6 +1,6 @@
 import React from 'react'
 import { FormattedMessage } from 'react-intl'
-import { Modal, Typography } from 'antd'
+import { Modal, Typography, Image } from 'antd'
 
 interface IProjectModal {
   visible: boolean
@@ -23,9 +23,15 @@ export const ProjectModal = ({ visible, onClose, project }: IProjectModal) => {
       width='60%'
     >
       {project && (
-        <Typography>
-          <FormattedMessage id={`${project.translateKey}.desc`} />
-        </Typography>
+        <>
+          <Typography>
+            <FormattedMessage id={`${project.translateKey}.desc`} />
+          </Typography>
+
+          <br />
+
+          <Image src={project.image} />
+        </>
       )}
     </Modal>
   )

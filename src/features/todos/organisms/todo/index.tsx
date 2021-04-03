@@ -1,6 +1,7 @@
 import React, { useMemo, useCallback } from 'react'
 import cn from 'classnames'
-import { Card, Checkbox, Tooltip, Icon } from 'antd'
+import { Card, Checkbox, Tooltip } from 'antd'
+import { DeleteOutlined } from '@ant-design/icons'
 import { FormattedDate, FormattedMessage } from 'react-intl'
 import { updateTodo, removeTodo } from '../../model'
 import { ITodo } from 'types/todos'
@@ -70,10 +71,9 @@ export const Todo = ({ text, className, created, doneDate, deadline }: ITodo & I
 
           <div>
             <Tooltip overlay={<FormattedMessage id='todos.remove' />}>
-              <Icon
+              <DeleteOutlined
                 className={classes.removeIcon}
                 onClick={onRemoveClick}
-                type='delete'
               />
             </Tooltip>
           </div>
