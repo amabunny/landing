@@ -26,4 +26,6 @@ declare interface ISergeiProject {
   key: TSergeiProjec
   translateKey: string
   image: string
+  detailedImages?: string[]
+  detailedDescription?: string
 }

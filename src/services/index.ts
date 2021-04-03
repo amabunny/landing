@@ -1,1 +1,2 @@
-export * from './local-storage'
+export { LocalStorageService } from './local-storage'
+export { RoutesService } from './routes'

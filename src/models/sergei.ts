@@ -66,7 +66,8 @@ export class SergeiModel {
       {
         key: 'pedant',
         translateKey: 'projects.pedant',
-        image: SergeiModel.getProjectImage('pedant')
+        image: SergeiModel.getProjectImage('pedant'),
+        detailedImages: []
       },
       {
         key: 'crmSystem',

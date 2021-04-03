@@ -1,4 +1,5 @@
-<babeledit_project version="1.2" be_version="2.6.1">
+<?xml version="1.0" encoding="UTF-8"?>
+<babeledit_project be_version="2.8.0" version="1.2">
     <!--
 
     BabelEdit project file
@@ -11,9 +12,9 @@
     <preset_collections/>
     <framework>generic-json</framework>
     <filename>landing.translates.babel</filename>
-    <source_root_dir></source_root_dir>
+    <source_root_dir>.</source_root_dir>
     <folder_node>
-        <name></name>
+        <name/>
         <children>
             <folder_node>
                 <name>aboutMe</name>
@@ -21,9 +22,9 @@
                     <concept_node>
                         <name>basicInfo</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -38,9 +39,9 @@
                     <concept_node>
                         <name>title</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -57,9 +58,9 @@
             <concept_node>
                 <name>allRightsReserved</name>
                 <definition_loaded>false</definition_loaded>
-                <description></description>
-                <comment></comment>
-                <default_text></default_text>
+                <description/>
+                <comment/>
+                <default_text/>
                 <translations>
                     <translation>
                         <language>en-US</language>
@@ -74,9 +75,9 @@
             <concept_node>
                 <name>language</name>
                 <definition_loaded>false</definition_loaded>
-                <description></description>
-                <comment></comment>
-                <default_text></default_text>
+                <description/>
+                <comment/>
+                <default_text/>
                 <translations>
                     <translation>
                         <language>en-US</language>
@@ -94,9 +95,9 @@
                     <concept_node>
                         <name>en-US</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -111,9 +112,9 @@
                     <concept_node>
                         <name>ru-RU</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -133,9 +134,9 @@
                     <concept_node>
                         <name>index</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -150,9 +151,9 @@
                     <concept_node>
                         <name>sequences</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -167,9 +168,9 @@
                     <concept_node>
                         <name>settings</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -184,9 +185,9 @@
                     <concept_node>
                         <name>skills</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -201,9 +202,9 @@
                     <concept_node>
                         <name>todos</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -226,9 +227,9 @@
                             <concept_node>
                                 <name>desc</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -243,9 +244,9 @@
                             <concept_node>
                                 <name>title</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -265,9 +266,9 @@
                             <concept_node>
                                 <name>desc</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -282,9 +283,9 @@
                             <concept_node>
                                 <name>title</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -304,9 +305,9 @@
                             <concept_node>
                                 <name>desc</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -321,9 +322,9 @@
                             <concept_node>
                                 <name>title</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -343,9 +344,9 @@
                             <concept_node>
                                 <name>desc</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -360,9 +361,9 @@
                             <concept_node>
                                 <name>title</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -384,9 +385,9 @@
                     <concept_node>
                         <name>submit</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -401,9 +402,9 @@
                     <concept_node>
                         <name>title</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -426,9 +427,9 @@
                             <concept_node>
                                 <name>desc</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -443,9 +444,9 @@
                             <concept_node>
                                 <name>title</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -465,9 +466,9 @@
                             <concept_node>
                                 <name>desc</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -482,9 +483,9 @@
                             <concept_node>
                                 <name>title</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -504,9 +505,9 @@
                             <concept_node>
                                 <name>desc</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -521,9 +522,9 @@
                             <concept_node>
                                 <name>title</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -543,9 +544,9 @@
                             <concept_node>
                                 <name>desc</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -560,9 +561,9 @@
                             <concept_node>
                                 <name>title</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -582,9 +583,9 @@
                             <concept_node>
                                 <name>desc</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -599,9 +600,9 @@
                             <concept_node>
                                 <name>title</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -621,9 +622,9 @@
                             <concept_node>
                                 <name>desc</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -638,9 +639,9 @@
                             <concept_node>
                                 <name>title</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -660,9 +661,9 @@
                             <concept_node>
                                 <name>desc</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -677,9 +678,9 @@
                             <concept_node>
                                 <name>title</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -699,9 +700,9 @@
                             <concept_node>
                                 <name>desc</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -716,9 +717,9 @@
                             <concept_node>
                                 <name>title</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -738,9 +739,9 @@
                             <concept_node>
                                 <name>desc</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -755,9 +756,9 @@
                             <concept_node>
                                 <name>title</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -779,9 +780,9 @@
                     <concept_node>
                         <name>completed</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -796,9 +797,9 @@
                     <concept_node>
                         <name>completedDate</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -816,9 +817,9 @@
                             <concept_node>
                                 <name>all</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -833,9 +834,9 @@
                             <concept_node>
                                 <name>done</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -850,9 +851,9 @@
                             <concept_node>
                                 <name>undone</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -872,9 +873,9 @@
                             <concept_node>
                                 <name>deadline</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -889,9 +890,9 @@
                             <concept_node>
                                 <name>submit</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -906,9 +907,9 @@
                             <concept_node>
                                 <name>text</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
@@ -925,9 +926,9 @@
                     <concept_node>
                         <name>remove</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -942,9 +943,9 @@
                     <concept_node>
                         <name>undone</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>en-US</language>
@@ -964,12 +965,12 @@
     <languages>
         <language>
             <code>en-US</code>
-            <source_id></source_id>
+            <source_id/>
             <source_file>public/dictionaries/en-US.json</source_file>
         </language>
         <language>
             <code>ru-RU</code>
-            <source_id></source_id>
+            <source_id/>
             <source_file>public/dictionaries/ru-RU.json</source_file>
         </language>
     </languages>
@@ -985,8 +986,8 @@
         <save_empty_translations>true</save_empty_translations>
         <copy_templates>
             <copy_template>'%1'</copy_template>
-            <copy_template></copy_template>
-            <copy_template></copy_template>
+            <copy_template/>
+            <copy_template/>
         </copy_templates>
     </editor_configuration>
     <primary_language>ru-RU</primary_language>

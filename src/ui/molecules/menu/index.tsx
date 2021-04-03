@@ -2,6 +2,7 @@ import React, { useCallback } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { navigate, Location } from '@reach/router'
 import { Icon, Menu } from 'antd'
+import { RoutesService } from 'services'
 import { ClickParam } from 'antd/lib/menu'
 import classes from './style.module.less'
 
@@ -15,27 +16,22 @@ const menuItems: IMenuItem[] = [
   {
     intlKey: 'menu.index',
     icon: 'home',
-    route: '/'
-  },
-  {
-    intlKey: 'menu.todos',
-    icon: 'check-square',
-    route: '/todos'
-  },
-  {
-    intlKey: 'menu.sequences',
-    icon: 'ordered-list',
-    route: '/sequences'
+    route: RoutesService.getIndex()
   },
   {
     intlKey: 'menu.skills',
     icon: 'profile',
-    route: '/skills'
+    route: RoutesService.getSkills()
+  },
+  {
+    intlKey: 'menu.todos',
+    icon: 'check-square',
+    route: RoutesService.getTodos()
   },
   {
     intlKey: 'menu.settings',
     icon: 'setting',
-    route: '/settings'
+    route: RoutesService.getSettings()
   }
 ]
 
