@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getLocaleAndChangeLanguage, changeLanguage, loadDictionary } from '../model'
+import { init, changeLanguage, loadDictionary } from '../model'
 
 const FAKE_LOADING_TIME_MS = 1000
 
@@ -8,7 +8,7 @@ export const useIntlFakeLoading = () => {
   const [intlFakeLoading, setFakeLoading] = useState(true)
 
   useEffect(() => {
-    getLocaleAndChangeLanguage()
+    init()
 
     const changeLanguageSub = changeLanguage.watch(() => {
       setFakeLoading(true)

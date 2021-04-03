@@ -1,13 +1,9 @@
-import { createStore, forward } from 'effector'
-import getLocale from 'browser-locale'
-import { ValidationError } from 'typed-contracts'
+import { createStore, forward, guard } from 'effector'
 import { createLoadDataStore } from 'utils/factory/load-data'
 import { IntlModel } from 'models/intl'
-import { changeLanguage, getLocaleAndChangeLanguage } from './events'
-import { availableLocalesContract } from './contracts'
 import { AvailableLocales } from 'types'
-
-/** Stores */
+import { changeLanguage, init } from './events'
+import { saveLanguageToLocalStorage, loadUserLanguage } from './effects'
 
 const {
   $data: $intlData,
@@ -19,34 +15,26 @@ const {
 })
 
 const $language = createStore<AvailableLocales | null>(null)
+  .on([changeLanguage, loadUserLanguage.doneData], (_, payload) => payload)
 
-$language
-  .on(changeLanguage, (_, payload) => payload)
+const $nonNullableLanugage = $language.map(language => String(language || AvailableLocales.enUS))
+const $isLanguageExists = $language.map(language => Boolean(language))
 
-/** End of stores */
-
-/** Side-effects */
+forward({
+  from: init,
+  to: loadUserLanguage
+})
 
 forward({
   from: changeLanguage,
-  to: loadDictionary
+  to: saveLanguageToLocalStorage
 })
 
-forward({
-  from: getLocaleAndChangeLanguage,
-  to: changeLanguage.prepend(() => {
-    const browserLng = getLocale()
-    const value = availableLocalesContract('browser language', browserLng)
-
-    if (value instanceof ValidationError) {
-      return AvailableLocales.enUS
-    }
-
-    return value
-  })
+guard({
+  source: $nonNullableLanugage.updates,
+  filter: $isLanguageExists,
+  target: loadDictionary
 })
-
-/** End of side-effects */
 
 export {
   $intl,
@@ -54,5 +42,5 @@ export {
   $language,
   loadDictionary,
   changeLanguage,
-  getLocaleAndChangeLanguage
+  init
 }

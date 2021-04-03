@@ -22,7 +22,7 @@
     "css-loader": "2",
     "customize-cra": "^0.9.1",
     "dexie": "^2.0.4",
-    "effector": "^20.9.1",
+    "effector": "21",
     "effector-react": "^20.6.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
@@ -32,9 +32,9 @@
     "react-dom": "npm:@hot-loader/react-dom",
     "react-hot-loader": "^4.12.18",
     "react-intl": "^3.9.3",
-    "react-scripts": "3.3.0",
+    "react-scripts": "^3.3.0",
     "typed-contracts": "^2.2.2",
-    "typescript": "~3.7.2"
+    "typescript": "4"
   },
   "devDependencies": {
     "eslint-config-standard": "^14.1.0",
